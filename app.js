@@ -23,10 +23,10 @@ function randomButtonColor(button, redRGB, greenRGB, blueRGB){
 }
 
 
-// var answerMessage = document.getElementById('answer');
+var answerMessage = document.getElementById('answer');
 
 function startGame(){
-    // answerMessage.innerHTML = "";
+    answerMessage.innerHTML = "";
 
 for (var i = 0; i < buttons.length; i++){
 
