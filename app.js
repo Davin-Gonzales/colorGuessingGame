@@ -4,48 +4,40 @@ heading = document.getElementById('colorValue');
 
 buttons[0]
 class rgbValues{
-    constructor (red){
-        this.red = generateRandomNumber();
-    }
-    constructor (green){
-        this.green = generateRandomNumber();
-    }
-    constructor (blue){
-        this.blue = generateRandomNumber();
+    constructor (){
+        this.color = generateRandomNumber();
     }
 }
+
 function generateRandomNumber(){
     return Math.round(Math.random()*255);
 }
 
 
 
-function randomButtonColor(button){
+
+function randomButtonColor(button, redRGB, greenRGB, blueRGB){
     button.setAttribute('style',
-                        'background-color: rgb('+ red +','+ green +','+ blue +');'
+                        'background-color: rgb('+ redRGB +','+ greenRGB +','+ blueRGB +');'
                        );
 }
 
 
-var answerMessage = document.getElementById('answer');
+// var answerMessage = document.getElementById('answer');
 
 function startGame(){
-    answerMessage.innerHTML = "";
-    var answerButton = Math.round(Math.random() * (buttons.length - 1));
+    // answerMessage.innerHTML = "";
 
 for (var i = 0; i < buttons.length; i++){
-    randomButtonColor(buttons[i]);
-    if (i === answerButton) {
-        heading.innerHTML = `(${randomButtonColor.red}, ${randomButtonColor.green}, ${randomButtonColor.blue})`;
-      }
-    buttons[i].addEventListener('click', function(){
-        if (this === buttons[answerButton]){
-            answerMessage.innerHTML = "Correct!";
-        }
-        else{
-            answerMessage.innerHTML = "Wrong answer! Guess Again!";
-        }
-    })
+
+    let red = new rgbValues();
+    let green = new rgbValues();
+    let blue = new rgbValues();
+    
+    randomButtonColor(buttons[i], red.color, green.color, blue.color);
+
+    
+    
 }
 }
 
