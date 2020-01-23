@@ -1,27 +1,24 @@
-var buttons = document.getElementsByClassName('colorButton');
+var buttons = document.getElementsByClassName("colorButton");
 var heading;
 var rgbArray = [];
-heading = document.getElementById('colorValue');
+heading = document.getElementById("colorValue");
 
-
-buttons[0]
-class rgbValues{
-    constructor (){
-        this.color = generateRandomNumber();
-    }
+buttons[0];
+class rgbValues {
+  constructor() {
+    this.color = generateRandomNumber();
+  }
 }
 
-function generateRandomNumber(){
-    return Math.round(Math.random()*255);
+function generateRandomNumber() {
+  return Math.round(Math.random() * 255);
 }
 
-
-
-
-function randomButtonColor(button, redRGB, greenRGB, blueRGB){
-    button.setAttribute('style',
-                        'background-color: rgb('+ redRGB +','+ greenRGB +','+ blueRGB +');'
-                       );
+function randomButtonColor(button, redRGB, greenRGB, blueRGB) {
+  button.setAttribute(
+    "style",
+    "background-color: rgb(" + redRGB + "," + greenRGB + "," + blueRGB + ");"
+  );
 }
 
 // function displayColorRGB(red, green, blue){
@@ -45,17 +42,16 @@ function randomButtonColor(button, redRGB, greenRGB, blueRGB){
 
 // }
 
-var answerMessage = document.getElementById('answer');
+var answerMessage = document.getElementById("answer");
 
-function startGame(){
-    answerMessage.innerHTML = "";
+function startGame() {
+  answerMessage.innerHTML = "";
 
-for (var i = 0; i < buttons.length; i++){
-
+  for (var i = 0; i < buttons.length; i++) {
     let red = new rgbValues();
     let green = new rgbValues();
     let blue = new rgbValues();
-    
+
     rgbArray[0] = red.color;
     rgbArray[1] = green.color;
     rgbArray[2] = blue.color;
@@ -64,14 +60,17 @@ for (var i = 0; i < buttons.length; i++){
 
     randomButtonColor(buttons[i], red.color, green.color, blue.color);
 
-    function rgbToString(r, g, b){
-        return `${r}, ${g}, ${b} good`;
+    function rgbToString(r, g, b) {
+      return `${r}, ${g}, ${b}`;
     }
 
-    document.getElementById('colorRGB').innerHTML = rgbToString(red.color, green.color, blue.color)
-
-}
+    document.getElementById("colorRGB").innerHTML = rgbToString(
+      red.color,
+      green.color,
+      blue.color
+    );
+  }
 }
 
 startGame();
-document.getElementById('resetButton').addEventListener('click', startGame);
+document.getElementById("resetButton").addEventListener("click", startGame);
