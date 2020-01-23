@@ -1,6 +1,6 @@
 var buttons = document.getElementsByClassName("colorButton");
 var heading;
-var rgbArray = [];
+var colorAr = [];
 heading = document.getElementById("colorValue");
 
 buttons[0];
@@ -42,6 +42,10 @@ function randomButtonColor(button, redRGB, greenRGB, blueRGB) {
 
 // }
 
+function rgbToString(r, g, b) {
+  return `${r}, ${g}, ${b}`;
+}
+
 var answerMessage = document.getElementById("answer");
 
 function startGame() {
@@ -52,24 +56,18 @@ function startGame() {
     let green = new rgbValues();
     let blue = new rgbValues();
 
-    rgbArray[0] = red.color;
-    rgbArray[1] = green.color;
-    rgbArray[2] = blue.color;
-
-    console.log(rgbArray);
-
     randomButtonColor(buttons[i], red.color, green.color, blue.color);
 
-    function rgbToString(r, g, b) {
-      return `${r}, ${g}, ${b}`;
-    }
-
-    document.getElementById("colorRGB").innerHTML = rgbToString(
-      red.color,
-      green.color,
-      blue.color
-    );
+    let string = rgbToString(red.color, green.color, blue.color);
+    colorAr[i] = string;
+    document.getElementById("colorRGB").innerHTML = colorAr[0];
+    document.getElementById("colorRGB1").innerHTML = colorAr[1];
+    document.getElementById("colorRGB2").innerHTML = colorAr[2];
+    document.getElementById("colorRGB3").innerHTML = colorAr[3];
+    document.getElementById("colorRGB4").innerHTML = colorAr[4];
+    document.getElementById("colorRGB5").innerHTML = colorAr[5];
   }
+  console.log(colorAr);
 }
 
 startGame();
